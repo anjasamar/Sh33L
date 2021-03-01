@@ -14,7 +14,7 @@ print W+R+"""
  | \__ \ ) _ (  (_ \ (_ \ )(__ 
  | (___/(_) (_)(___/(___/(____) v.2"""
 print W+R+" |\n[+]"+W+" Tittle   : "+O+"WebShell Scanner\n"+W+R+"[+]"+W+" Coded By : "+O+"AnjasT3chSoft"
-print W+R+"[+]"+W+" Github   :"+O+" https://github.com/anjastech"
+print W+R+"[+]"+W+" Github   :"+O+" https://github.com/anjasamar"
 print W+R+"[+]"+W+" Facebook :"+O+" https://web.facebook.com/anjelo.sonliberto"
 print W+R+"[+]___________________________________________[+]"
 print W+"\n[+]=="+R+" Menu :"
@@ -67,7 +67,7 @@ if "1" in menu:
 					print R+"[!] Gunakab: http://Situs.com"+W
 					sys.exit()
 				if permintaan.status_code == 200:
-					print G+"[+] Found Shell"
+					print G+"[+] Shell Ditemukan"
 					print R+"[!] "+W+"PATH :",uri
 					result.write(uri+"\n")
 				else:
@@ -99,9 +99,9 @@ if "1" in menu:
 				else:
 					print R+"[-]"+W+" Tidak Di temukan! "+R+"=>"+W+"",wordlist
 			filed.close()
-			print "\n"+W+B+"[*]"+W+" Scan Finished."
-			print W+B+"[*]"+W+" Result :"+R+W+"",str(len(open('result.txt').readlines()))
-			print W+B+"[*]"+W+" Result Saved To :"+R+"result.txt"+W
+			print "\n"+W+B+"[*]"+W+" Scan Selesai."
+			print W+B+"[*]"+W+" Hasil :"+R+W+"",str(len(open('result.txt').readlines()))
+			print W+B+"[*]"+W+" Hasil disimpan ke :"+R+"result.txt"+W
 			sys.exit()
 
 if "2" in menu:
@@ -120,19 +120,19 @@ if "2" in menu:
 		try:
 			print W+B+"[*]"+W+" Target IP :"+G+"",requests.get('http://ip-api.com/json/%s'%(t)).json()["query"]
 		except:
-			print R+"[-] Connection Error!"+W
+			print R+"[-] Koneksi Error!"+W
 			sys.exit()
 	else:
-		print R+"[-] Ussage: http://site.com"+W
+		print R+"[-] Penggunaan: http://site.com"+W
 		sys.exit()
 	try:
 		ur=open(urlist).readlines()
 	except:
-		print R+"[!] List Not Found!"
+		print R+"[!] Daftar tidak ditemukan!"
 		sys.exit()
 	urnum=len(ur)
-	print W+B+"[*]"+W+R+" "+str(urnum)+" "+W+"List Loaded!"
-	print W+B+"[*]"+W+" Bruteforcing Webshell With"+R+"",urlist+"\n"
+	print W+B+"[*]"+W+R+" "+str(urnum)+" "+W+"Daftar dimuat!"
+	print W+B+"[*]"+W+" Bruteforcing Webshell Dengan"+R+"",urlist+"\n"
 	meme=open(urlist)
 	filos=open('result.txt','w')
 	for me in range(urnum):
@@ -141,18 +141,18 @@ if "2" in menu:
 		try:
 			rr=requests.get(uri)
 		except:
-			print R+"[!] Ussage: http://site.com"+W
+			print R+"[!] Penggunaan: http://site.com"+W
 			sys.exit()
 		if rr.status_code == 200:
-			print G+"[+] Found Shell"
+			print G+"[+] Shell ditemukan"
 			print R+"[!] "+W+"PATH :",uri
 			filos.write(uri+"\n")
 		else:
-			print R+"[-]"+W+" Not Found! "+R+"=>"+W+"",wl
+			print R+"[-]"+W+" Tidak ditemukan! "+R+"=>"+W+"",wl
 	filos.close()
-	print "\n"+W+B+"[*]"+W+" Scan Finished."
-	print W+B+"[*]"+W+" Result :"+R+W+"",str(len(open('result.txt').readlines()))
-	print W+B+"[*]"+W+" Result Saved To :"+R+"result.txt"+W
+	print "\n"+W+B+"[*]"+W+" Scan Selesai."
+	print W+B+"[*]"+W+" Hasil :"+R+W+"",str(len(open('result.txt').readlines()))
+	print W+B+"[*]"+W+" Hasil disimpan ke :"+R+"result.txt"+W
 else:
-	print R+"[-] Input Failed!"+W
+	print R+"[-] Input Gagal!"+W
 	sys.exit()
